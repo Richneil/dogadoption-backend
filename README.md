@@ -162,3 +162,94 @@ SELECT * FROM adoption_requests;
 ```
 
 ✅ They should appear after the app starts and you hit endpoints.
+
+For Frontend Team see this note:
+## 🔗 API Endpoints Summary (Frontend Guide)
+
+### 🐶 Dog Management
+
+```text
+GET /dogs
+Access: Public
+Description: Returns the list of all dogs available for adoption.
+Authentication: Not required
+```
+
+```text
+POST /dogs
+Access: Admin only
+Description: Creates a new dog record in the system.
+Authentication: Basic Auth (admin account)
+```
+
+```text
+PUT /dogs/{dogId}
+Access: Admin only
+Description: Updates the details of a specific dog (name, breed, age, status).
+Authentication: Basic Auth (admin account)
+```
+
+```text
+DELETE /dogs/{dogId}
+Access: Admin only
+Description: Deletes a specific dog from the system.
+Authentication: Basic Auth (admin account)
+```
+
+---
+
+### 📩 Adoption Requests
+
+```text
+POST /dogs/{dogId}/requests?userId={userId}
+Access: Authenticated user
+Description: Creates an adoption request for a selected dog.
+Behavior: Automatically sets request status to PENDING.
+Authentication: Basic Auth (user or admin)
+```
+
+```text
+GET /requests
+Access: Admin only
+Description: Returns the list of all adoption requests submitted by users.
+Authentication: Basic Auth (admin account)
+```
+
+```text
+PUT /requests/{requestId}/status?status=APPROVED
+Access: Admin only
+Description: Approves a specific adoption request.
+Behavior:
+- Changes request status to APPROVED
+- Automatically updates the dog status to ADOPTED
+Authentication: Basic Auth (admin account)
+```
+
+```text
+PUT /requests/{requestId}/status?status=REJECTED
+Access: Admin only
+Description: Rejects a specific adoption request.
+Behavior:
+- Changes request status to REJECTED
+- Dog remains AVAILABLE (if not already adopted)
+Authentication: Basic Auth (admin account)
+```
+
+---
+
+### 🔐 Authentication Notes
+
+```text
+Public Routes:
+GET /dogs
+
+Secured Routes:
+All other endpoints require Basic Auth
+
+Default Admin Account:
+username: admin
+password: admin123
+
+Note:
+Users must register first before submitting adoption requests.
+```
