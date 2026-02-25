@@ -1,0 +1,15 @@
+# Maven
+target/
+*.log
+
+# IntelliJ / JetBrains
+.idea/
+*.iml
+out/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets / local configs
+.env
