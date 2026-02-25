@@ -39,9 +39,25 @@ cd dogadoption-backend
 Database setup (MySQL)
 
 ## 1) Create database
-Open MySQL Workbench and run:
+
+Open Command Prompt and login to MySQL:
+
+```bash
+mysql -u root -p
+```
+
+Enter your MySQL root password when prompted.
+
+Then run:
+
 ```sql
 CREATE DATABASE dog_adoption_db;
+```
+
+(Optional) Verify it was created:
+
+```sql
+SHOW DATABASES;
 ```
 
 ## 2) Configure connection in application.properties
