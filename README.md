@@ -98,7 +98,7 @@ Admin is auto-created by the seeder:
 username: admin  
 password: admin123  
 
-Register a User (Public)
+Register a User (Public) (No Auth Needed since this is registration)
 
 POST:
 ```
