@@ -87,7 +87,7 @@ DogadoptionApplication.java
 mvn clean spring-boot:run
 ```
 
-App runs at:
+App runs at POSTMAN or SWAGGER (any backend api testing):
 ```
 http://localhost:8080
 ```
