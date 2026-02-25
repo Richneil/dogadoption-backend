@@ -164,7 +164,7 @@ SELECT * FROM adoption_requests;
 ✅ They should appear after the app starts and you hit endpoints.
 
 For Frontend Team see this note:
-## 🔗 API Endpoints Summary (Frontend Guide)
+## For Frontend Team see this note:🔗 API Endpoints Summary (Frontend Guide)
 
 ### 🐶 Dog Management
 
